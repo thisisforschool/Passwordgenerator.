@@ -1,0 +1,38 @@
+import random
+
+karakters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+specTK = "1234567890@#$%^&*!"
+
+HoeveelWW = input("Hoeveel wachtwoorden wil je genereren? ")
+
+while HoeveelWW.isalpha() == True:
+    print("Geef A.U.B. een getal op (bijvoorbeeld 1 i.p.v. één)")
+    HoeveelWW = input("Hoeveel wachtwoorden wil je genereren? ")
+
+HoeveelWW = int(HoeveelWW)
+
+
+HoeveelKar = input("Uit hoeveel karakters wil je dat je wachtwoord bestaat? ")
+
+while HoeveelKar.isalpha() == True:
+    print("Geef A.U.B. een getal op (bijvoorbeeld 1 i.p.v. één)")
+    HoeveelKar = input("Hoeveel wachtwoorden wil je genereren? ")
+
+HoeveelKar = int(HoeveelKar)
+
+HoeveelSpecTK = input("Hoeveel cijfers en speciale tekens wil je in je wachtwoord(en) hebben? ")
+
+while HoeveelSpecTK.isalpha() == True:
+    print("Geef A.U.B. een getal op (bijvoorbeeld 1 i.p.v. één)")
+    HoeveelKar = input("Hoeveel wachtwoorden wil je genereren? ")
+
+
+HoeveelSpecTK = int(HoeveelSpecTK)
+
+for tekens in range(HoeveelWW):
+    wachtwoord = ''
+    for num in range(HoeveelSpecTK):
+        wachtwoord += random.choice(specTK)
+    for kar in range(HoeveelKar):
+        wachtwoord += random.choice(karakters)
+    print(wachtwoord)
